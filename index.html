@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Goal Song</title>
+<style>
+/* Add your CSS styles here */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+}
+
+h1 {
+    text-align: left;
+}
+
+table {
+    width: 20%;
+    /* margin: 20px auto; */
+    border-collapse: collapse;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+button {
+    padding: px 10px;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+#audioDetails {
+    text-align: left;
+    /* margin-top: 20px; */
+}
+</style>
+</head>
+<body>
+<h1>Goal Song Controller</h1>
+
+<table>
+<thead>
+    <tr>
+    <th>Name</th>
+    <th>Play Song</th>
+    </tr>
+</thead>
+<tbody>
+    <tr>
+    <td>Evan</td>
+    <td><button onclick="playSong('evan')">Play Evan's Song</button></td>
+    </tr>
+    <tr>
+    <td>Will</td>
+    <td><button onclick="playSong('will')">Play Will's Song</button></td>
+    </tr>
+    <tr>
+    <td>Kenny</td>
+    <td><button onclick="playSong('kenny')">Play Kenny's Song</button></td>
+    </tr>
+    <tr>
+    <td>Josh</td>
+    <td><button onclick="playSong('josh')">Play Josh's Song</button></td>
+    </tr>
+    <tr>
+    <td>Keagan</td>
+    <td><button onclick="playSong('keagan')">Play Keagan's Song</button></td>
+    </tr>
+    <tr>
+    <td>Justin</td>
+    <td><button onclick="playSong('justin')">Play Justin's Song</button></td>
+    </tr>
+    <tr>
+    <td>Logan</td>
+    <td><button onclick="playSong('logan')">Play Logan's Song</button></td>
+    </tr>
+    <tr>
+    <td>Curtis</td>
+    <td><button onclick="playSong('curtis')">Play Curtis's Song</button></td>
+    </tr>
+    <tr>
+    <td>Dylan</td>
+    <td><button onclick="playSong('dylan')">Play Dylan's Song</button></td>
+    </tr>
+    <tr>
+    <td>Lucas</td>
+    <td><button onclick="playSong('lucas')">Play Lucas's Song</button></td>
+    </tr>
+    <tr>
+    <td>Marcus</td>
+    <td><button onclick="playSong('marcus')">Play Marcus's Song</button></td>
+    </tr>
+    <tr>
+    <td>Sean</td>
+    <td><button onclick="playSong('sean')">Play Sean's Song</button></td>
+    </tr>
+    <tr>
+    <td>Marshall</td>
+    <td><button onclick="playSong('marshall')">Play Marshall's Song</button></td>
+    </tr>
+    <tr>
+    <td>Mateo</td>
+    <td><button onclick="playSong('mateo')">Play Mateo's Song</button></td>
+    </tr>
+    <tr>
+    <td>Joel</td>
+    <td><button onclick="playSong('joel')">Play Joel's Song</button></td>
+    </tr>
+    <tr>
+    <td>Troy</td>
+    <td><button onclick="playSong('troy')">Play Troy's Song</button></td>
+    </tr>
+    <tr>
+    <td>Jacob</td>
+    <td><button onclick="playSong('jacob')">Play Jacob's Song</button></td>
+    </tr>
+</tbody>
+</table>
+
+<div id="audioDetails">
+<p id="selectedName"></p>
+<p id="selectedSong"></p>
+</div>
+
+<audio id="audioPlayer" controls style="display: none;">
+Your browser does not support the audio element.
+</audio>
+
+<script>
+function playSong(name) {
+    const audioFolderPath = 'Songs/';
+    const nameToAudio = {
+    'evan': { name: 'Evan', song: 'I Don\'t like N**gers', file: 'IDLN.mp3' },
+    'will': { name: 'Will', song: 'I Had Sex with My Dog', file: 'IHSWMD.mp3' },
+    'kenny': { name: 'Kenny', song: 'Cruel Summer T Swift', file: 'CruelSummer.mp3' },
+    'josh': { name: 'Josh', song: 'No Nut November', file: 'NNN.mp3' },
+    'keagan': { name: 'Keagan', song: 'Mean T Swift', file: 'Mean.mp3' },
+    'justin': { name: 'Justin', song: 'Gangnam Style', file: 'GangnamStyle.mp3' },
+    'logan': { name: 'Logan', song: 'Better In Stereo', file: 'BetterInStereo.mp3' },
+    'curtis': { name: 'Curtis', song: 'NBA Quandale Dingle', file: 'NBA.mp3' },
+    'dylan': { name: 'Dylan', song: 'Finesse', file: 'Finesse.mp3' },
+    'lucas': { name: 'Lucas', song: 'Sketchers', file: 'Sketchers.mp3' },
+    'marcus': { name: 'Marcus', song: 'N**N**N**', file: 'NigNigNig.mp3' },
+    'sean': { name: 'Sean', song: 'N**N**N**', file: 'NigNigNig.mp3' },
+    'marshall': { name: 'Marshall', song: 'Jaws', file: 'Jaws.mp3' },
+    'mateo': { name: 'Mateo', song: 'Family Ties', file: 'FamilyTies.mp3' },
+    'joel': { name: 'Joel', song: 'California Gurls', file: 'CaliforniaGurls.mp3' },
+    'troy': { name: 'Troy', song: 'Spooky, Scary, Skeletons', file: 'SSS.mp3' },
+    'jacob': { name: 'Jacob', song: 'Allahu Akbar', file: 'AllahuAkbar.mp3' }
+
+    };
+
+    if (nameToAudio.hasOwnProperty(name)) {
+    const audioFileName = nameToAudio[name].file;
+    const audioPlayer = document.getElementById('audioPlayer');
+
+    audioPlayer.src = audioFolderPath + audioFileName;
+    audioPlayer.play();
+
+    document.getElementById('selectedName').innerText = `Name: ${nameToAudio[name].name}`;
+    document.getElementById('selectedSong').innerText = `Song: ${nameToAudio[name].song}`;
+
+    audioPlayer.style.display = 'block';
+    } else {
+    alert('No song found for the selected name.');
+    }
+}
+</script>
+</body>
+</html>
