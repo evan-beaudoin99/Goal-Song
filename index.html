@@ -64,10 +64,10 @@ button:hover {
     <td>Evan</td>
     <td><button onclick="playSong('evan')">Play Evan's Song</button></td>
     </tr>
-    <tr>
+    <!-- <tr>
     <td>Will</td>
     <td><button onclick="playSong('will')">Play Will's Song</button></td>
-    </tr>
+    </tr> -->
     <tr>
     <td>Kenny</td>
     <td><button onclick="playSong('kenny')">Play Kenny's Song</button></td>
@@ -132,6 +132,22 @@ button:hover {
     <td>Jack</td>
     <td><button onclick="playSong('jack')">Play Jack's Song</button></td>
     </tr>
+    <tr>
+    <td>Liam</td>
+    <td><button onclick="playSong('liam')">Play Liam's Song</button></td>
+    </tr>
+    <tr>
+    <td>Nick</td>
+    <td><button onclick="playSong('nick')">Play Nick's Song</button></td>
+    </tr>
+    <tr>
+    <td>Ryan</td>
+    <td><button onclick="playSong('ryan')">Play Ryan's Song</button></td>
+    </tr>
+    <tr>
+    <td>Cameron</td>
+    <td><button onclick="playSong('nick')">Play Cam's Song</button></td>
+    </tr>
 </tbody>
 </table>
 
@@ -148,15 +164,15 @@ Your browser does not support the audio element.
 function playSong(name) {
     const audioFolderPath = 'Songs/';
     const nameToAudio = {
-    'evan': { name: 'Evan', song: 'I Don\'t like N**gers', file: 'IDLN.mp3' },
-    'will': { name: 'Will', song: 'I Had Sex with My Dog', file: 'IHSWMD.mp3' },
+    'evan': { name: 'Evan', song: 'Just Dance', file: 'JustDance.mp3' },
+    //'will': { name: 'Will', song: 'I Had Sex with My Dog', file: 'IHSWMD.mp3' },
     'kenny': { name: 'Kenny', song: 'Cruel Summer T Swift', file: 'CruelSummer.mp3' },
-    'josh': { name: 'Josh', song: 'No Nut November', file: 'NNN.mp3' },
+    'josh': { name: 'Josh', song: 'Ali - A', file: 'brass.mp3' },
     'keagan': { name: 'Keagan', song: 'Mean T Swift', file: 'Mean.mp3' },
     'justin': { name: 'Justin', song: 'Gangnam Style', file: 'GangnamStyle.mp3' },
     'logan': { name: 'Logan', song: 'Better In Stereo', file: 'BetterInStereo.mp3' },
     'curtis': { name: 'Curtis', song: 'NBA Quandale Dingle', file: 'NBA.mp3' },
-    'dylan': { name: 'Dylan', song: 'Finesse', file: 'Finesse.mp3' },
+    'dylan': { name: 'Dylan', song: 'Sex', file: 'sex1.mp3' },
     'lucas': { name: 'Lucas', song: 'Sketchers', file: 'Sketchers.mp3' },
     'marcus': { name: 'Marcus', song: 'N**N**N**', file: 'NigNigNig.mp3' },
     'sean': { name: 'Sean', song: 'N**N**N**', file: 'NigNigNig.mp3' },
@@ -165,7 +181,10 @@ function playSong(name) {
     'joel': { name: 'Joel', song: 'California Gurls', file: 'CaliforniaGurls.mp3' },
     'troy': { name: 'Troy', song: 'Spooky, Scary, Skeletons', file: 'SSS.mp3' },
     'jacob': { name: 'Jacob', song: 'Allahu Akbar', file: 'AllahuAkbar.mp3' },
-    'jack': { name: 'Jack', song: 'Stop snitching', file: 'StopSnitching.mp3' }
+    'jack': { name: 'Jack', song: 'Stop snitching', file: 'StopSnitching.mp3' },
+    'liam': { name: 'Liam', song: 'Stop snitching', file: 'StopSnitching.mp3' },
+    'nick': { name: 'Nick', song: 'I Don\'t like N**gers', file: 'IDLN.mp3' },
+    'ryan': { name: 'Ryan', song: 'Pack a dip', file: 'packADip.mp3' }
     };
 
     if (nameToAudio.hasOwnProperty(name)) {
@@ -185,4 +204,4 @@ function playSong(name) {
 }
 </script>
 </body>
-</html>
+</html>    
